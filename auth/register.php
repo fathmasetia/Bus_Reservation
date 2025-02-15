@@ -19,6 +19,10 @@
         <label for="email" class="form-label">Nama</label>
         <input type="text" class="form-control" name="name" placeholder="Masukkan Nama" />
       </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Kontak</label>
+        <input type="phone" class="form-control" name="contact" placeholder="Masukkan Nomor Telepon" />
+      </div>
       <div class="mb-3 form-password-toggle">
         <label class="form-label" for="password">Password</label>
         <div class="input-group input-group-merge">
