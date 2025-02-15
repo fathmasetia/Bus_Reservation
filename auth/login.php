@@ -16,6 +16,10 @@
         <input type="text" class="form-control" name="username"
           placeholder="Enter your username" autofocus required />
       </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Kontak</label>
+        <input type="phone" class="form-control" name="contact" placeholder="Masukkan Nomor Telepon" />
+      </div>
       <div class="mb-3 form-password-toggle">
         <div class="d-flex justify-content-between">
           <label class="form-label" for="password">Password</label>
