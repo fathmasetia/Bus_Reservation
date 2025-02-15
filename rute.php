@@ -16,9 +16,9 @@ include '.includes/toast_notification.php';
                     <thead>
                         <tr class="text-center">
                             <th width="50px">#</th>
-                            <th>Rute</th>
                             <th>Kota Asal</th>
                             <th>Kota Tujuan</th>
+                            <th>Harga</th>
                             <th width="150px">Opsi</th>
                         </tr>
                     </thead>
