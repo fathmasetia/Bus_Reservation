@@ -4,7 +4,7 @@ $username = "root";
 $password = "";
 $database = "bus_reservation";
 
-$conn = ,ysqli_connect($host, $username, $password, $databse);
+$conn = mysqli_connect($host, $username, $password, $databse);
 
 if ($conn->connect_error){
     die ("Database gagal terkoneksi: " .$conn->connect_error);
