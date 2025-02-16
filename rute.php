@@ -23,7 +23,7 @@ include '.includes/toast_notification.php';
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <!-- Mengambil data kategori dari database -->
+                        <!-- Mengambil data dari database -->
                         <?php
                         $index = 1;
                         $query = "SELECT * FROM rute";
@@ -31,7 +31,7 @@ include '.includes/toast_notification.php';
                         while ($rute = mysqli_fetch_assoc($exec)) :
                         ?>
                         <tr>
-                            <!-- Menampilkan nomor, nama ketegori, dan opsi -->
+                            <!-- Menampilkan -->
                             <td><?= $index++; ?></td>
                             <td><?= $rute['kota_asal']; ?></td>
                             <td><?= $rute['kota_tujuan']; ?></td>
@@ -120,7 +120,7 @@ include '.includes/toast_notification.php';
                     <form action="proses_kategori.php" method="POST">
                         <div>
                             <label for="namaKategori" class="form-label">Nama Kategori</label>
-                            <!-- Input untuk nama kategori baru -->
+                            <!-- Input untuk nama baru -->
                             <input type="text" class="form-control" name="category_name" required>
                         </div>
                         <div class="modal-footer">
