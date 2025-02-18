@@ -119,11 +119,21 @@ include '.includes/toast_notification.php';
                 <div class="modal-body">
                     <form action="proses_rute.php" method="POST">
                         <div>
-                            <label for="namaRute" class="form-label">Nama Rute</label>
+                            <label for="namaRute" class="form-label"></label>
                             <!-- Input untuk nama baru -->
-                            <input type="text" class="form-control" name="kota_asal" required>
-                            <input type="text" class="form-control" name="kota_tujuan" required>
-                            <input type="text" class="form-control" name="harga" required>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="kota_asal" required placeholder="Masukkan kota Asal">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="kota_tujuan" required placeholder="Masukkan kota Tujuan">
+                            </div>
+                            <p>Masukkan Perkiraan Jarak</p>
+                            <input type="radio" class="" name="20km" required>
+                            <label for="20km">20km</label><br>
+                            <input type="radio" class="" name="30km" required>
+                            <label for="30km">30km</label><br>
+                            <input type="radio" class="" name="40km" required>
+                            <label for="40km">40km</label><br>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
