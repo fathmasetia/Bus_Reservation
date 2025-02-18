@@ -1,17 +1,20 @@
 <?php
 session_start();
-$penumpang_id = $_SESSION["penumpang_id"];
-$nama = $_SESSION["name"];
-$password = $_SESSION["password"];
+
+$nama = $_SESSION ["nama"];
+//$penumpang_id = $_SESSION["penumpang_id"];
+//$kontak = $_SESSION ["kontak"];
 
 $notification = $_SESSION['notification'] ?? null;
-if ($notification) {
+if ($notification){
     unset($_SESSION['notification']);
 }
-if (empty($_SESSION["username"]) || empty( $_SESSION["role"])) {
+
+if (empty($_SESSION["nama"])){
     $_SESSION['notification'] = [
         'type' => 'danger',
-        'message' => 'Silakan Login Terlebih Dahulu!'
+        'message' => 'Silahkan login terlebih dahulu!'
     ];
     header('Location: ./auth/login.php');
+    exit();
 }

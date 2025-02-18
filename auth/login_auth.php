@@ -1,9 +1,9 @@
-<?php
+<?php 
 session_start();
 require_once("../config.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nama = $_POST["name"];
+    $nama = $_POST["nama"];
     $password = $_POST["password"];
 
     $sql = "SELECT * FROM penumpang WHERE nama='$nama'";
@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
 
         if (password_verify($password, $row["password"])) {
-            $_SESSION["name"] = $row["nama"];
-            $_SESSION["penumpang_id"] = $row ["penumpang_id"];
-            $_SESSION["kontak"] = $row ["kontak"];
+            $_SESSION["nama"] = $row["nama"];
+            //$_SESSION["penumpang_id"] = $row ["penumpang_id"];
+            //$_SESSION["kontak"] = $row ["contact"];
 
             $_SESSION['notification'] = [
                 'type' => 'primary',
@@ -27,17 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $_SESSION['notification'] = [
                 'type' => 'danger',
-                'message' => 'Username atau Password salah' 
+                'message' => 'Nama atau Password salah' 
             ];
         }
         } else {
             $_SESSION['notification'] = [
                 'type' => 'danger',
-                'message' => 'Username atau Password salah'
+                'message' => 'Nama atau Password salah'
             ];
         }       
-         header('Location: login.php');
+        header('Location: login.php');
         exit();
         }
         $conn->close();
-?>
+?> 

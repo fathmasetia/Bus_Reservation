@@ -3,9 +3,9 @@ require_once("../config.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nama = $_POST["name"];
+    $nama = $_POST["nama"];
     $password = $_POST["password"];
-    $kontak = $_POST["contact"];
+    $kontak = $_POST["kontak"];
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO penumpang (nama, password, kontak)

@@ -61,7 +61,7 @@ include '.includes/toast_notification.php';
                                         <form action="proses_rute.php" method="POST">
                                             <div>
                                                 <p>Tindakan ini tidak bisa dibatalkan.</p>
-                                                <input type="hidden" name="catID" value="<?= $rute['rute_id']; ?>">
+                                                <input type="hidden" name="rute_id" value="<?= $rute['rute_id']; ?>">
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
@@ -83,7 +83,7 @@ include '.includes/toast_notification.php';
                                     <div class="modal-body">
                                         <form action="proses_rute.php" method="POST">
                                             <!-- input tersembunyi untuk menyimpan update rute -->
-                                                <input type="hidden" name="catID" value="<?= $rute['rute_id']; ?>">
+                                                <input type="hidden" name="rute_id" value="<?= $rute['rute_id']; ?>">
                                             <div class="form-group">
                                                 <label>Nama Rute</label>
                                                 <!-- Input untuk nama rute -->
@@ -108,20 +108,22 @@ include '.includes/toast_notification.php';
     </div>
     </div>
     <?php include '.includes/footer.php'; ?>
-    <!-- Modal untuk Tambah Data Kategori -->
-    <div class="modal fade" id="addCategory" tabindex="-1" aria-hidden="true">
+    <!-- Modal untuk Tambah Rute -->
+    <div class="modal fade" id="addRute" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tambah Data</h5>
+                    <h5 class="modal-title">Tambah Rute</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="proses_kategori.php" method="POST">
+                    <form action="proses_rute.php" method="POST">
                         <div>
-                            <label for="namaKategori" class="form-label">Nama Kategori</label>
+                            <label for="namaRute" class="form-label">Nama Rute</label>
                             <!-- Input untuk nama baru -->
-                            <input type="text" class="form-control" name="category_name" required>
+                            <input type="text" class="form-control" name="kota_asal" required>
+                            <input type="text" class="form-control" name="kota_tujuan" required>
+                            <input type="text" class="form-control" name="harga" required>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>

@@ -13,7 +13,7 @@
     <form class="mb-3" action="login_auth.php" method="POST">
       <div class="mb-3">
         <label class="form-label">Nama</label>
-        <input type="text" class="form-control" name="name"
+        <input type="text" class="form-control" name="nama"
           placeholder="Masukkan Nama" autofocus required />
       </div>
       <div class="mb-3 form-password-toggle">
