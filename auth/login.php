@@ -12,9 +12,9 @@
     <h4 class="mb-2">Selamat datang! 👋</h4>
     <form class="mb-3" action="login_auth.php" method="POST">
       <div class="mb-3">
-        <label class="form-label">Username</label>
-        <input type="text" class="form-control" name="username"
-          placeholder="Enter your username" autofocus required />
+        <label class="form-label">Nama</label>
+        <input type="text" class="form-control" name="name"
+          placeholder="Masukkan Nama" autofocus required />
       </div>
       <div class="mb-3 form-password-toggle">
         <div class="d-flex justify-content-between">
