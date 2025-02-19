@@ -1,6 +1,7 @@
 <?php
 include '.includes/header.php';
 include '.includes/toast_notification.php';
+include './tambahan.php';
 ?>
 <div class="container-xxl flex-grow-1 container-p-y">
     <!-- Tabel data rute -->
@@ -85,10 +86,35 @@ include '.includes/toast_notification.php';
                                             <!-- input tersembunyi untuk menyimpan update rute -->
                                                 <input type="hidden" name="rute_id" value="<?= $rute['rute_id']; ?>">
                                             <div class="form-group">
-                                                <label>Nama Rute</label>
-                                                <!-- Input untuk nama rute -->
-                                                <input type="text" value="<?= $rute['kota_asal']; ?>" name="kota_asal" class="form-control">
-                                                <input type="text" value="<?= $rute['kota_tujuan']; ?>" name="kota_tujuan" class="form-control">
+                                            <div class="mb-3">
+                                <input type="text" class="form-control" name="kota_asal" required placeholder="Masukkan kota Asal">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="kota_tujuan" required placeholder="Masukkan kota Tujuan">
+                            </div>
+                            <div class="col-md">
+                                <label class="text-light fw-semibold d-block">Pilih Jarak (±)</label>
+                                <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="10km">10km</label>
+                            </div>
+                                <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="20km">20km</label>
+                            </div>
+                            <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="15km">15km</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="30km">30km</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                <label class="form-check-label" for="35km">35km</label>
+                            </div>
+                        </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -121,6 +147,11 @@ include '.includes/toast_notification.php';
                         <div>
                             <label for="namaRute" class="form-label"></label>
                             <!-- Input untuk nama baru -->
+                            <?php
+                                if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                                    $jarak = $_POST["jarak"];
+                                }
+                                ?>
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="kota_asal" required placeholder="Masukkan kota Asal">
                             </div>
@@ -130,23 +161,23 @@ include '.includes/toast_notification.php';
                             <div class="col-md">
                                 <label class="text-light fw-semibold d-block">Pilih Jarak (±)</label>
                                 <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Rp 100.000,00-" <?= (isset($_POST['harga']) && $_POST['harga'] == 'Rp 100.000,00-') ? 'checked' : '' ?>>
                                 <label class="form-check-label" for="10km">10km</label>
                             </div>
                                 <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Rp 150.000,00-">
                                 <label class="form-check-label" for="20km">20km</label>
                             </div>
                             <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Rp 300.000,00-">
                                 <label class="form-check-label" for="15km">15km</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Rp 450.000,00-">
                                 <label class="form-check-label" for="30km">30km</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="Rp 500.000,00-">
                                 <label class="form-check-label" for="35km">35km</label>
                             </div>
                         </div>

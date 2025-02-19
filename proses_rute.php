@@ -12,12 +12,12 @@ if (isset($_POST['simpan'])) {
     if ($exec) {
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Kategori berhasil ditambahkan!'
+            'message' => 'Rute berhasil ditambahkan!'
         ];
     } else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Gagal menambahkan kategori: ' . mysqli_error($conn)
+            'message' => 'Gagal menambahkan Rute: ' . mysqli_error($conn)
         ];
     }
 
@@ -55,12 +55,12 @@ if (isset($_POST['update'])) {
     if ($exec) {
         $_SESSION['notification'] = [
             'type' => 'primary',
-            'message' => 'Kategori berhasil diperbarui!'
+            'message' => 'Rute berhasil diperbarui!'
         ];
     } else {
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Gagal memperbarui kategori: ' . mysqli_error($conn)
+            'message' => 'Gagal memperbarui Rute: ' . mysqli_error($conn)
         ];
     }
     header('Location: rute.php');
