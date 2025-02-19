@@ -128,11 +128,17 @@ include '.includes/toast_notification.php';
                                 <input type="text" class="form-control" name="kota_tujuan" required placeholder="Masukkan kota Tujuan">
                             </div>
                             <p>Masukkan Perkiraan Jarak</p>
-                            <input type="radio" class="" name="20km" required>
-                            <label for="20km">20km</label><br>
-                            <input type="radio" class="" name="30km" required>
-                            <label for="30km">30km</label><br>
-                            <input type="radio" class="" name="40km" required>
+                            <input type="radio" id="10" name="jarak" required>
+                            <label for="10km">10km</label>
+                            <input type="radio" id="15" name="jarak" required>
+                            <label for="15km">15km</label><br>
+                            <input type="radio" id="20" name="jarak" required>
+                            <label for="20km">20km</label>
+                            <input type="radio" id="25" name="jarak" required>
+                            <label for="25km">25km</label><br>
+                            <input type="radio" id="30" name="jarak" required>
+                            <label for="30km">30km</label>
+                            <input type="radio" id="40" name="jarak" required>
                             <label for="40km">40km</label><br>
                         </div>
                         <div class="modal-footer">
