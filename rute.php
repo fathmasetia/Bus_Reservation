@@ -127,19 +127,28 @@ include '.includes/toast_notification.php';
                             <div class="mb-3">
                                 <input type="text" class="form-control" name="kota_tujuan" required placeholder="Masukkan kota Tujuan">
                             </div>
-                            <p>Masukkan Perkiraan Jarak</p>
-                            <input type="radio" id="10" name="jarak" required>
-                            <label for="10km">10km</label>
-                            <input type="radio" id="15" name="jarak" required>
-                            <label for="15km">15km</label><br>
-                            <input type="radio" id="20" name="jarak" required>
-                            <label for="20km">20km</label>
-                            <input type="radio" id="25" name="jarak" required>
-                            <label for="25km">25km</label><br>
-                            <input type="radio" id="30" name="jarak" required>
-                            <label for="30km">30km</label>
-                            <input type="radio" id="40" name="jarak" required>
-                            <label for="40km">40km</label><br>
+                            <div class="col-md">
+                                <label class="text-light fw-semibold d-block">Pilih Jarak (±)</label>
+                                <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="10km">10km</label>
+                            </div>
+                                <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="20km">20km</label>
+                            </div>
+                            <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="15km">15km</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label" for="30km">30km</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                <label class="form-check-label" for="35km">35km</label>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
