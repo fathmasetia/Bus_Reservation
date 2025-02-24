@@ -5,7 +5,12 @@ session_start();
 if (isset($_POST['simpan'])) {
     $kota_asal = $_POST['kota_asal'];
     $kota_tujuan = $_POST['kota_tujuan'];
+    if (isset($_POST['harga'])){
+        $selected_val = $_POST['harga'];
+        $harga = $_POST [$selected_val];
+    }
     $harga = $_POST['harga'];
+
     $query = "INSERT INTO rute (kota_asal, kota_tujuan, harga) VALUES('$kota_asal', '$kota_tujuan', '$harga')";
     $exec = mysqli_query($conn, $query);
 
