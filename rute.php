@@ -95,23 +95,23 @@ include '.includes/toast_notification.php';
                             <div class="col-md">
                                 <label class="text-light fw-semibold d-block">Pilih Jarak (±)</label>
                                 <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="radio" name="harga" id="inlineRadio1" value="100000" <?= (isset($_POST['harga']) && $_POST['harga'] == '100000') ? 'checked' : '' ?>>
                                 <label class="form-check-label" for="10km">10km</label>
                             </div>
-                                <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <div class="form-check form-check-inline mt-3">
+                                <input class="form-check-input" type="radio" name="harga" id="inlineRadio2" value="150000" <?= (isset($_POST['harga']) && $_POST['harga'] == '150000') ? 'checked' : '' ?>>
                                 <label class="form-check-label" for="20km">20km</label>
                             </div>
                             <div class="form-check form-check-inline mt-3">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <input class="form-check-input" type="radio" name="harga" id="inlineRadio3" value="300000" <?= (isset($_POST['harga']) && $_POST['harga'] == '300000') ? 'checked' : '' ?>>
                                 <label class="form-check-label" for="15km">15km</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <input class="form-check-input" type="radio" name="harga" id="inlineRadio4" value="450000" <?= (isset($_POST['harga']) && $_POST['harga'] == '450000') ? 'checked' : '' ?>>
                                 <label class="form-check-label" for="30km">30km</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                <input class="form-check-input" type="radio" name="harga" id="inlineRadio5" value="500000" <?= (isset($_POST['harga']) && $_POST['harga'] == '500000') ? 'checked' : '' ?>>
                                 <label class="form-check-label" for="35km">35km</label>
                             </div>
                         </div>

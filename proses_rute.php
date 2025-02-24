@@ -53,6 +53,10 @@ if (isset($_POST['update'])) {
     $rute_id = $_POST['rute_id'];
     $kota_asal = $_POST['kota_asal'];
     $kota_tujuan = $_POST['kota_tujuan'];
+    if (isset($_POST['harga'])){
+        $selected_val = $_POST['harga'];
+        $harga = $_POST [$selected_val];
+    }
     $harga = $_POST['harga'];
     $query = "UPDATE rute SET rute_id = '$rute_id', kota_asal='$kota_asal', kota_tujuan='$kota_tujuan', harga='$harga' WHERE rute_id='$rute_id'";
     $exec = mysqli_query($conn, $query);
