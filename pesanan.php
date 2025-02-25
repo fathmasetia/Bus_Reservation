@@ -45,7 +45,77 @@ include '.includes/header.php';
                                 ?>
                             </select>
                         </div>
-                        <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+                        <body>
+                            <link rel="stylesheet" href="kursi/style.css">
+                            <div class="container">     
+                        <label for="kursi" class="form-label">Pilih Kursi</label>
+                                <div class="row1">
+                                <div class="column">
+                                    <div class="seat"></div>
+                                    <div class="seat"></div>
+                                </div>
+                                <div class="column">
+                                    <div class="seat"></div>
+                                    <div class="seat"></div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="column">
+                                    <div class="seat" name="1"></div>
+                                    <div class="seat" name="2"></div>
+                                </div>
+                                <div class="column">
+                                    <div class="seat occupied" name="3"></div>
+                                    <div class="seat" name="4"></div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="column">
+                                    <div class="seat" name="5"></div>
+                                    <div class="seat" name="6"></div>
+                                </div>
+                                <div class="column">
+                                    <div class="seat occupied" name="7"></div>
+                                    <div class="seat occupied" name="8"></div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="column">
+                                    <div class="seat" name="9"></div>
+                                    <div class="seat occupied" name="10"></div>
+                                </div>
+                                <div class="column">
+                                    <div class="seat" name="11"></div>
+                                    <div class="seat" name="12"></div>
+                                </div>
+                            </div>
+
+                            <div class="row1">
+                                <div class="column">
+                                    <div class="seat" name="13"></div>
+                                    <div class="seat" name="14"></div>
+                                </div>
+                                <div class="column">
+                                    <div class="seat" name="15"></div>
+                                    <div class="seat" name="16"></div>
+                                </div>
+                            </div>
+                            </div>
+                            <script>
+                                const container = document.querySelector('.container');
+                                const seats = document.querySelectorAll('.row1 .seat:not(.occupied)');
+                                container.addEventListener('click', e => {
+                                if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
+                                e.target.classList.toggle('selected');
+                                updateSelectedCount();
+                                }
+                                });
+                        </script>
+                    </body>
+                        <button type="submit" name="simpan" class="btn btn-primary">Buat Pesanan</button>
                     </form>
                 </div>
             </div>
