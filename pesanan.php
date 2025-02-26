@@ -39,7 +39,7 @@ include '.includes/header.php';
                                 $result = $conn->query($query); 
                                 if ($result->num_rows > 0){
                                     while ($row = $result->fetch_assoc()){ 
-                                        echo "<option value='" . $row["rute_id"] ."'>" . $row["kota_asal"] . " - " . $row["kota_tujuan"] . "</option>";
+                                        echo "<option value='" . $row["rute_id"] ."'>" . $row["kota_asal"] . " - " . $row["kota_tujuan"] . " / " . $row["harga"] . "</option>";
                                     }
                                 }
                                 ?>
@@ -49,69 +49,81 @@ include '.includes/header.php';
                             <link rel="stylesheet" href="kursi/style.css">
                             <div class="container">     
                         <label for="kursi" class="form-label">Pilih Kursi</label>
-                                <div class="row1">
-                                <div class="column">
-                                    <div class="seat"></div>
-                                    <div class="seat"></div>
+                        
+                        <div class="row1">
+                            <div class="column">
+                                <div class="seat" id="1">1</div>
+                                <div class="seat" id="2">2</div>
+                            </div>
+                            <div class="column">
+                                <div class="seat occupied" id="3">3</div>
+                                <div class="seat" id="4">4</div>
+                            </div>
+                        </div>
+                        
+                        <div class="row1">
+                            <div class="column">
+                                    <div class="seat" id="5">5</div>
+                                    <div class="seat" id="6">6</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat"></div>
-                                    <div class="seat"></div>
+                                    <div class="seat occupied" id="7">7</div>
+                                    <div class="seat occupied" id="8">8</div>
                                 </div>
                             </div>
 
                             <div class="row1">
                                 <div class="column">
-                                    <div class="seat" name="1"></div>
-                                    <div class="seat" name="2"></div>
+                                    <div class="seat" id="9">9</div>
+                                    <div class="seat occupied" id="10">10</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat occupied" name="3"></div>
-                                    <div class="seat" name="4"></div>
+                                    <div class="seat" id="11">11</div>
+                                    <div class="seat" id="12">12</div>
                                 </div>
                             </div>
-
+                            
                             <div class="row1">
                                 <div class="column">
-                                    <div class="seat" name="5"></div>
-                                    <div class="seat" name="6"></div>
+                                    <div class="seat" id="13">13</div>
+                                    <div class="seat" id="14">14</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat occupied" name="7"></div>
-                                    <div class="seat occupied" name="8"></div>
+                                    <div class="seat occupied" id="15">15</div>
+                                    <div class="seat" id="16">16</div>
                                 </div>
                             </div>
-
                             <div class="row1">
                                 <div class="column">
-                                    <div class="seat" name="9"></div>
-                                    <div class="seat occupied" name="10"></div>
+                                    <div class="seat" id="17">17</div>
+                                    <div class="seat" id="18">18</div>
                                 </div>
                                 <div class="column">
-                                    <div class="seat" name="11"></div>
-                                    <div class="seat" name="12"></div>
+                                    <div class="seat" id="19">19</div>
+                                    <div class="seat occupied" id="20">20</div>
                                 </div>
                             </div>
-
-                            <div class="row1">
-                                <div class="column">
-                                    <div class="seat" name="13"></div>
-                                    <div class="seat" name="14"></div>
-                                </div>
-                                <div class="column">
-                                    <div class="seat" name="15"></div>
-                                    <div class="seat" name="16"></div>
-                                </div>
-                            </div>
-                            </div>
+                        </div>
+                        <p class="text">Kamu memilih <span id="totalseat">0</span> kursi. <br> Kursi yang anda pilih : <span id="nomor">0</span></p>
                             <script>
                                 const container = document.querySelector('.container');
                                 const seats = document.querySelectorAll('.row1 .seat:not(.occupied)');
+                                function updateSelectedCount() {
+                                    const selectedSeats = document.querySelectorAll('.row .seat.selected');
+                                    const selectedNomor = document.querySelectorAll('.row .seat.selected');
+                                    const selectedSeatsCount = selectedSeats.length;
+                                    const selectedNomorKursi = selectedNomor.length;
+    
+                                    totalseat.innerText = selectedSeatsCount;
+                                    nomor.innerText = selectedNomorKursi;
+
+                                }
                                 container.addEventListener('click', e => {
                                 if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
                                 e.target.classList.toggle('selected');
                                 updateSelectedCount();
                                 }
+
                                 });
                         </script>
                     </body>
