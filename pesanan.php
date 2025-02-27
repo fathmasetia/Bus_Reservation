@@ -48,16 +48,16 @@ include '.includes/header.php';
                         <body>
                             <link rel="stylesheet" href="kursi/style.css">
                             <div class="container">     
-                        <label for="kursi" class="form-label">Pilih Kursi</label>
+                        <label for="kursi" >Pilih Kursi</label>
                         
                         <div class="row1">
                             <div class="column">
-                                <div class="seat" id="1">1</div>
-                                <div class="seat" id="2">2</div>
+                                <div class="seat" id="nomor" value="1">1</div>
+                                <div class="seat" id="nomor" value="2">2</div>
                             </div>
                             <div class="column">
-                                <div class="seat occupied" id="3">3</div>
-                                <div class="seat" id="4">4</div>
+                                <div class="seat occupied" id="nomor">3</div>
+                                <div class="seat" id="nomor">4</div>
                             </div>
                         </div>
                         
@@ -104,18 +104,18 @@ include '.includes/header.php';
                                 </div>
                             </div>
                         </div>
-                        <p class="text">Kamu memilih <span id="totalseat">0</span> kursi. <br> Kursi yang anda pilih : <span id="nomor">0</span></p>
+                        <p class="text" style="text-align:center">Kamu memilih <span id="totalseat">0</span> kursi.</p>
                             <script>
                                 const container = document.querySelector('.container');
                                 const seats = document.querySelectorAll('.row1 .seat:not(.occupied)');
                                 function updateSelectedCount() {
                                     const selectedSeats = document.querySelectorAll('.row .seat.selected');
-                                    const selectedNomor = document.querySelectorAll('.row .seat.selected');
+                                    //const selectedNomor = document.getElementById("nomor");
                                     const selectedSeatsCount = selectedSeats.length;
-                                    const selectedNomorKursi = selectedNomor.length;
+                                    //const selectedNomorKursi = selectedNomor.selected;
     
                                     totalseat.innerText = selectedSeatsCount;
-                                    nomor.innerText = selectedNomorKursi;
+                                    //nomor.innerText = selectedNomorKursi;
 
                                 }
                                 container.addEventListener('click', e => {
